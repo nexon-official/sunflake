@@ -1,0 +1,1 @@
+export { toIcon } from './icon'

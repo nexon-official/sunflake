@@ -1,0 +1,14 @@
+services:
+  grafana:
+    container_name: 'nexon-sunflake-datasource'
+    platform: 'linux/amd64'
+    build:
+      context: ./.config
+      args:
+        grafana_image: ${GRAFANA_IMAGE:-grafana-enterprise}
+        grafana_version: ${GRAFANA_VERSION:-10.4.7}
+    ports:
+      - 3000:3000/tcp
+    volumes:
+      - ./dist:/var/lib/grafana/plugins/nexon-sunflake-datasource
+      - ./provisioning:/etc/grafana/provisioning

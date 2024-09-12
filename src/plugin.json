@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "Sunflake",
+  "id": "nexon-sunflake-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_sunflake",
+  "alerting": true,
+  "info": {
+    "description": "Snowflake plugin",
+    "author": {
+      "name": "Nexon"
+    },
+    "keywords": ["datasource"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=10.4.7",
+    "plugins": []
+  }
+}
