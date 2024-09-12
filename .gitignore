@@ -28,8 +28,9 @@ ci/
 e2e-results/
 **/cypress/videos
 **/cypress/report.json
+sunflake/
+sunflake-*.zip
 
 # Editor
 .idea
-
 .eslintcache
