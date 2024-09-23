@@ -1,4 +1,4 @@
-![Sunflake](/doc/img/sunflake-logo-long.svg =1131x268)
+<img src="/doc/img/sunflake-logo-long.svg" width="300">
 
 Sunflake is a Grafana plugin that provides a Snowflake datasource.
 More detailed information will be updated soon.
