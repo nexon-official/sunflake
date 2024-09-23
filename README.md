@@ -1,4 +1,4 @@
-# Sunflake
+![Sunflake](/doc/img/sunflake-logo-long.svg =1131x268)
 
 Sunflake is a Grafana plugin that provides a Snowflake datasource.
 More detailed information will be updated soon.
@@ -96,8 +96,8 @@ If using macros feels difficult, exploring Builder Mode (timeseries) by trying d
 |null|Sets to null, so it will not be displayed.|
 |previous|Fills with the value from the previous time period.|
 
-## Note
-Be cautious, as the values entered will be lost when switching between Builder and Code modes.
+> [!CAUTION]
+> Be cautious, as the values entered will be lost when switching between Builder and Code modes.
 
 ## Usage Guide
 Let's assume you have the following data that you want to represent as a time series.
