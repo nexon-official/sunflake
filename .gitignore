@@ -34,3 +34,6 @@ sunflake-*.zip
 # Editor
 .idea
 .eslintcache
+
+# OS
+**/.DS_Store

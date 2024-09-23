@@ -330,7 +330,7 @@ export function ConfigEditor(props: Props) {
           width={INPUT_WIDTH}
         />
       </InlineField>
-      <InlineField label="Max Lifttime Seconds" labelWidth={LABEL_WIDTH} tooltip={
+      <InlineField label="Max Lifetime Seconds" labelWidth={LABEL_WIDTH} tooltip={
         <span>
           MaxLifetime sets the maximum amount of time a connection may be reused.
           Expired connections may be closed lazily before reuse.
