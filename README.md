@@ -179,7 +179,7 @@ https://grafana.com/docs/grafana/latest/administration/plugin-management/#allow-
 #### 4. Restart Grafana
 Restart the Grafana server to apply the changes:
 ```bash
-sudo systemctl restart grafana-server
+sudo service grafana-server restart
 ```
 > [!NOTE]
 > Please refer to the documentation for more details.
