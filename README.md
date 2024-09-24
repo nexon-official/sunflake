@@ -149,3 +149,38 @@ If you are using Builder Mode, you can input it as follows.
 Looking at the preview query, you can see that it matches the query above.
 
 ![builder time group](/doc/img/builder_time_group.png)
+
+## Install the sunflake plugin
+#### 1. Download the Sunflake plugin
+Download the plugin(zip file) from the [release page](https://github.com/nexon-official/sunflake/releases)
+
+#### 2. Extract the Sunflake plugin
+```bash
+unzip nexon-sunflake-datasource-x.x.x.zip -d YOUR_PLUGIN_DIR
+```
+This will extract the plugin into the YOUR_PLUGIN_DIR.   
+Your grafana plugins directory typically located at `/var/lib/grafana/plugins`.
+> [!WARNING]
+> The locations of the plugin folder and grafana.ini file may vary. Please refer to the official Grafana documentation for more details.
+
+
+#### 3. Allow Unsigned plugin
+Open the `grafana.ini` file, usually located in `/etc/grafana/grafana.ini`.   
+Add or update the following line under the `[plugins]` section to allow unsigned plugins:
+```ini
+[plugins]
+allow_loading_unsigned_plugins = nexon-sunflake-datasource
+```
+> [!NOTE]
+> Please refer to the documentation for more details.   
+https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#configuration-file-location   
+https://grafana.com/docs/grafana/latest/administration/plugin-management/#allow-unsigned-plugins
+
+#### 4. Restart Grafana
+Restart the Grafana server to apply the changes:
+```bash
+sudo systemctl restart grafana-server
+```
+> [!NOTE]
+> Please refer to the documentation for more details.
+https://grafana.com/docs/grafana/latest/setup-grafana/start-restart-grafana/
