@@ -184,3 +184,6 @@ sudo service grafana-server restart
 > [!NOTE]
 > Please refer to the documentation for more details.
 https://grafana.com/docs/grafana/latest/setup-grafana/start-restart-grafana/
+
+#### 5. Supported Grafana Version
+This plugin currently supports and has been tested with **Grafana version 10.4.7**.
