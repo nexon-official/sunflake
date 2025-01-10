@@ -118,7 +118,8 @@ func (qm *queryModel) evalMacro(matches [3]string) (sql string, err error) {
 		}
 		sql = timeGroup(args[0], qm.interval)
 	default:
-		return "", fmt.Errorf("failed to generate a SQL: unsupported macro [%s]", name)
+		return matches[0], nil
+		// return "", fmt.Errorf("failed to generate a SQL: unsupported macro [%s]", name)
 	}
 
 	return sql, nil
