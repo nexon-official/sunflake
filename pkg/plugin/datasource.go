@@ -82,7 +82,7 @@ func (d *Datasource) QueryData(ctx context.Context, req *backend.QueryDataReques
 	close(responseChan)
 
 	for result := range responseChan {
-		if result.Frames != nil && len(result.Frames) > 0 {
+		if len(result.Frames) > 0 {
 			refID := result.Frames[0].RefID
 
 			// save the response in a hashmap
@@ -99,11 +99,12 @@ func (d *Datasource) QueryData(ctx context.Context, req *backend.QueryDataReques
 func (d *Datasource) concurrentQuery(ctx context.Context, query backend.DataQuery, responseChan chan<- backend.DataResponse, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	select {
-	case <-ctx.Done():
-		log.ErrorM("context is canceled")
-	case responseChan <- d.query(ctx, query):
-	}
+	// select {
+	// case <-ctx.Done():
+	// 	log.ErrorM("context is canceled")
+	// case responseChan <- d.query(ctx, query):
+	// }
+	responseChan <- d.query(ctx, query)
 }
 
 func (d *Datasource) query(ctx context.Context, query backend.DataQuery) (response backend.DataResponse) {
