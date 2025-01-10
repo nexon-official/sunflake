@@ -1,5 +1,6 @@
 services:
   grafana:
+    user: root
     container_name: 'nexon-sunflake-datasource'
     platform: 'linux/amd64'
     build:
@@ -11,4 +12,5 @@ services:
       - 3000:3000/tcp
     volumes:
       - ./dist:/var/lib/grafana/plugins/nexon-sunflake-datasource
+      - ./data:/var/lib/grafana
       - ./provisioning:/etc/grafana/provisioning

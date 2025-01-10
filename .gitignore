@@ -30,6 +30,7 @@ e2e-results/
 **/cypress/report.json
 sunflake/
 sunflake-*.zip
+data/
 
 # Editor
 .idea
