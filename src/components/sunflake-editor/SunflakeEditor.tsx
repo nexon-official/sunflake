@@ -31,7 +31,14 @@ function SunflakeEditor({ datasource, query, onChange, onRunQuery }: SunflakeEdi
         <SunflakeTimeSeriesBuilder />
       )}
       {editorMode === EditorMode.Code && (
-        <SunflakeCodeEditor />
+        // When the queryText changes in SunflakeCodeEditor, dispatch is called to update the content.
+        // However, if the dataFormat is changed on the screen and then the query is modified,
+        // onQueryTextChange refers to the previous dispatch, causing the changes to dataFormat to be lost.
+        // In other words, the editor modifies the state as it was at the time it was mounted.
+        // To address this, the editor must be remounted whenever dataFormat changes.
+        // React will unmount the existing component and mount a new one when the key changes,
+        // so ensure the key is appropriately updated.
+        <SunflakeCodeEditor key={dataFormat} />
       )}
     </SunflakeProvider>
   )
